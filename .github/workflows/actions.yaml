@@ -46,3 +46,5 @@ jobs:
           push: false
       - name: Make docker run fail
         run: sudo mv /usr/bin/docker /usr/bin/dockerorig && sudo cp dockershim /usr/bin/docker
+      - name: Check result
+        run: docker version

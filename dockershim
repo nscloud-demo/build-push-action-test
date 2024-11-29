@@ -3,4 +3,4 @@ if [ $1="run" ]; then
   exit 1
 fi
 
-dockerorig "$@"
+/usr/bin/dockerorig "$@"
