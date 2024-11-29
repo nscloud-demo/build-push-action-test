@@ -8,7 +8,9 @@ jobs:
     runs-on:
       - nscloud-ubuntu-22.04-amd64-1x2
     steps:
-      - uses: namespacelabs/nscloud-checkout-action@HEAD
+      - name: Checkout
+        uses: actions/checkout@v4
+
 
       - name: Build and push
         uses: docker/build-push-action@v6
