@@ -33,7 +33,7 @@ jobs:
 
 
   test-2:
-    name: Perform test without init
+    name: Perform test without init crazy
     runs-on:
       - nscloud-ubuntu-22.04-amd64-1x2
     steps:
@@ -45,4 +45,4 @@ jobs:
           context: .
           push: false
       - name: Make docker run fail
-        run: sudo cp /bin/false /usr/bin/docker
+        run: sudo mv /usr/bin/docker /usr/bin/dockerorig && sudo cp dockershim /usr/bin/docker
