@@ -3,15 +3,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  actions-tests:
-    name: Perform test
+  test-without-init:
+    name: Perform test without init
     runs-on:
       - nscloud-ubuntu-22.04-amd64-1x2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
 
 
+  test-with-init:
+    name: Perform test with init
+    runs-on:
+      - nscloud-ubuntu-22.04-amd64-1x2
+      - nscloud-exp-features:use-init
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
