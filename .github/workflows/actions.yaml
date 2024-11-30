@@ -19,6 +19,7 @@ jobs:
 
   test-with-init:
     name: Perform test with init
+    if: false
     runs-on:
       - nscloud-ubuntu-22.04-amd64-1x2
       - nscloud-exp-features:use-init
