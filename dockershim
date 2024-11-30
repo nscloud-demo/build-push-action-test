@@ -2,8 +2,11 @@
 
 if [ "$1" = "run" ]; then
   sleep 0.1
-  echo "No records found"
-  >&2 echo "No records found"
+  for i in {1..1000} ; do
+    echo "No records found stdout"
+    >&2 echo "No records found stderr"
+  done
+
   exit 0
 fi
 
