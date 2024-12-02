@@ -3,7 +3,7 @@
 if [ "$1" = "run" ]; then
   sleep 0.1
   echo "Trying a lot of data in stderr"
-  dd if=/dev/zero of=/proc/self/fd/1 count=1 bs=1M
+  dd if=/dev/zero of=/dev/stderr count=1 bs=1M
   #>&2 echo "No records found stderr"
   #for i in {1..10000} ; do
   #  echo "No records found stdout No records found stdout No records found stdout No records found stdout"
