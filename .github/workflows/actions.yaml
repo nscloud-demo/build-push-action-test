@@ -35,8 +35,11 @@ jobs:
 
   test-2:
     name: Perform test without init crazy
+    strategy:
+      matrix:
+        onon: [nscloud-ubuntu-22.04-amd64-1x2, ubuntu-latest]
     runs-on:
-      - nscloud-ubuntu-22.04-amd64-1x2
+      - ${{ matrix.onon }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
