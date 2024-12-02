@@ -2,13 +2,7 @@
 
 if [ "$1" = "run" ]; then
   sleep 0.1
-  echo "Trying a lot of data in stdout"
-  dd if=/dev/zero count=1 bs=1M
-  #>&2 echo "No records found stderr"
-  #for i in {1..10000} ; do
-  #  echo "No records found stdout No records found stdout No records found stdout No records found stdout"
-  #done
-
+  >&2 echo "No records found stderr"
   exit 0
 fi
 
